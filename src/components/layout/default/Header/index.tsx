@@ -1,13 +1,47 @@
-import { Row, Col } from "antd"
-import './header.css'
+import "./header.css";
+import logo from "../../../../assets/images/logo.png";
+import { AutoComplete, Col, Input, Row, Typography } from "antd";
 
+const menu = [
+  { id: 1, name: "Trang chủ" },
+  { id: 2, name: "Thể loại" },
+  { id: 3, name: "Quốc gia" },
+  { id: 4, name: "Phim mới" },
+  { id: 5, name: "Phim bộ" },
+  { id: 6, name: "Phim lẻ" },
+  { id: 7, name: "Phim thuyết minh" },
+];
 const Header = () => {
-    return (
-        <div className="header">
-
-            <img src='https://www.canva.com/design/DAFpdwX4xoo/wCC4e9XEdy63dRzuWx0_nw/view?utm_content=DAFpdwX4xoo&utm_campaign=designshare&utm_medium=link&utm_source=publishsharelink' alt='' width={100} />
-
-        </div>
-    )
-}
-export default Header
+  return (
+    <div className="header">
+      <Row>
+        <Col>
+          <img alt="" src={logo} width={60} />
+        </Col>
+        <Col>
+          <AutoComplete
+            popupClassName="certain-category-search-dropdown"
+            style={{ width: 250 }}
+            // options={options}
+          >
+            <Input.Search size="large" placeholder="input here" />
+          </AutoComplete>
+        </Col>
+        <Col>
+          <div>
+            <a>Đăng ký</a>
+            <a>Đăng nhập</a>
+          </div>
+        </Col>
+      </Row>
+      <Row>
+        {menu.map((item, index) => (
+          <Typography key={index} style={{ color: "#fff" }}>
+            {item.name}
+          </Typography>
+        ))}
+      </Row>
+    </div>
+  );
+};
+export default Header;
