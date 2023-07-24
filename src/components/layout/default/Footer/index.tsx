@@ -1,10 +1,11 @@
 import { Col, Row } from "antd";
 import "./footer.css";
+import "../../../../index.css";
 
 const Footer = () => {
   return (
     <div className="footer">
-      <Row>
+      <Row className="container">
         <Col>
           <p>
             Xem phim hay miễn phí chất lượng cao với phụ đề tiếng việt - thuyết

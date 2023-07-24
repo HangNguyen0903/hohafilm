@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #000000;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -17,12 +17,26 @@
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: #000;
   }
   a:hover {
     color: #747bff;
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+.container {
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Maximum width for the container */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 20px; /* Add some padding inside the container */
+  box-sizing: border-box; /* Include padding and border in the total width */
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 767px) {
+  .container {
+    padding: 10px; /* Reduce padding on smaller screens */
   }
 }

@@ -6,7 +6,7 @@ import "./swiper.css";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Row, Tabs, TabsProps, Col } from "antd";
-import Poster from "../../assets/images/poster.jpg";
+// import Poster from "../../assets/images/poster.jpg";
 import CardMin from "../../components/Card/CardFilm_Min";
 
 const FilmHot = [
@@ -69,21 +69,53 @@ const Film_ComingSoon = [
     title: "Xinchaoban",
     view: 100,
   },
+  {
+    poster: "",
+    title: "Xinchaoban",
+    view: 100,
+  },
+
+  {
+    poster: "",
+    title: "Xinchaoban",
+    view: 100,
+  },
+  {
+    poster: "",
+    title: "Xinchaoban",
+    view: 100,
+  },
 ];
 const items: TabsProps["items"] = [
   {
     key: "1",
-    label: `Tab 1`,
-    children: `Content of Tab Pane 1`,
+    label: `Phim mới`,
+    children: (
+      <div>
+        <Row gutter={[20, 16]}>
+          {FilmHot.map((item, index) => (
+            <Col span={5}>
+              <CardFilm
+                key={index}
+                count={item.count}
+                total={item.total}
+                poster={item.poster}
+                title={item.title}
+              />
+            </Col>
+          ))}
+        </Row>
+      </div>
+    ),
   },
   {
     key: "2",
-    label: `Tab 2`,
+    label: `Phim lẻ mới`,
     children: `Content of Tab Pane 2`,
   },
   {
     key: "3",
-    label: `Tab 3`,
+    label: `Phim đã hoàn thành`,
     children: `Content of Tab Pane 3`,
   },
 ];
@@ -119,6 +151,7 @@ const Home = () => {
         </Row>
       </div>
       <div className="body-film">
+        {/* Tab film */}
         <Row gutter={20}>
           <Col span={18}>
             <Tabs
@@ -126,26 +159,82 @@ const Home = () => {
               defaultActiveKey="1"
               items={items}
               onChange={onChange}
+              style={{ color: "#fff" }}
             />
+
+            <div className="cartoon">
+              <h2>Phim hoạt hình</h2>
+              <Row gutter={[20, 16]}>
+                {FilmHot.map((item, index) => (
+                  <Col span={5}>
+                    <CardFilm
+                      key={index}
+                      count={item.count}
+                      total={item.total}
+                      poster={item.poster}
+                      title={item.title}
+                    />
+                  </Col>
+                ))}
+              </Row>
+            </div>
+            <div className="cartoon">
+              <h2>Phim yêu thích</h2>
+              <Row gutter={[20, 16]}>
+                {FilmHot.map((item, index) => (
+                  <Col span={5}>
+                    <CardFilm
+                      key={index}
+                      count={item.count}
+                      total={item.total}
+                      poster={item.poster}
+                      title={item.title}
+                    />
+                  </Col>
+                ))}
+              </Row>
+            </div>
           </Col>
+
           <Col span={6}>
-            <h3
-              style={{
-                marginBottom: "32px",
-                borderBottom: "1px dotted #f2f2f2 ",
-                paddingBottom: "10px",
-              }}
-            >
-              Sắp chiếu
-            </h3>
-            {Film_ComingSoon.map((item, index) => (
-              <CardMin
-                key={index}
-                poster={item.poster}
-                view={item.view}
-                title={item.title}
-              />
-            ))}
+            <div>
+              <h3
+                style={{
+                  marginBottom: "32px",
+                  borderBottom: "1px dotted #f2f2f2 ",
+                  paddingBottom: "10px",
+                }}
+              >
+                Trending
+              </h3>
+              {Film_ComingSoon.map((item, index) => (
+                <CardMin
+                  key={index}
+                  poster={item.poster}
+                  view={item.view}
+                  title={item.title}
+                />
+              ))}
+            </div>
+            <div>
+              <h3
+                style={{
+                  marginBottom: "32px",
+                  borderBottom: "1px dotted #f2f2f2 ",
+                  paddingBottom: "10px",
+                }}
+              >
+                Sắp chiếu
+              </h3>
+              {Film_ComingSoon.map((item, index) => (
+                <CardMin
+                  key={index}
+                  poster={item.poster}
+                  view={item.view}
+                  title={item.title}
+                />
+              ))}
+            </div>
           </Col>
         </Row>
       </div>
