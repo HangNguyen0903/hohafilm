@@ -1,7 +1,7 @@
 import CardFilm from "../../components/Card/CardFilm";
 import "./home-pape.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination } from "swiper/modules";
+import { Pagination, Autoplay } from "swiper/modules";
 import "./swiper.css";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -10,6 +10,36 @@ import { Row, Tabs, TabsProps, Col } from "antd";
 import CardMin from "../../components/Card/CardFilm_Min";
 
 const FilmHot = [
+  {
+    count: 10,
+    total: 16,
+    poster: "",
+    title: "Hello Kity",
+  },
+  {
+    count: 10,
+    total: 16,
+    poster: "",
+    title: "Hello Kity",
+  },
+  {
+    count: 10,
+    total: 16,
+    poster: "",
+    title: "Hello Kity",
+  },
+  {
+    count: 10,
+    total: 16,
+    poster: "",
+    title: "Hello Kity",
+  },
+  {
+    count: 10,
+    total: 16,
+    poster: "",
+    title: "Hello Kity",
+  },
   {
     count: 10,
     total: 16,
@@ -131,10 +161,14 @@ const Home = () => {
           <Swiper
             slidesPerView={6}
             spaceBetween={10}
-            pagination={{
-              clickable: true,
+            // pagination={{
+            //   clickable: true,
+            // }}
+            autoplay={{
+              delay: 1000,
+              disableOnInteraction: false,
             }}
-            modules={[Pagination]}
+            modules={[Autoplay, Pagination]}
             className="mySwiper"
           >
             {FilmHot.map((item, index) => (

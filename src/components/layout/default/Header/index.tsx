@@ -30,7 +30,7 @@ const Header = () => {
             style={{ width: 450, height: 50 }}
             // options={options}
           >
-            <Input.Search size="large" placeholder="input here" />
+            <Input.Search size="large" placeholder="Search..." />
           </AutoComplete>
         </Col>
         <Col>

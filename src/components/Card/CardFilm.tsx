@@ -1,3 +1,4 @@
+import { Typography } from "antd";
 import "./style-card.css";
 interface CardProps {
   count: number;
@@ -10,7 +11,9 @@ const CardFilm = ({ count, total, title, poster }: CardProps) => {
   return (
     <div className="card-film">
       <div className="episodes">
-        Tập {count}/{total} Vietsub
+        <Typography style={{ fontSize: 14, color: "#fff" }}>
+          Tập {count}/{total} Vietsub
+        </Typography>
       </div>
 
       <div>
