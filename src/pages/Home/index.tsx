@@ -7,7 +7,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Row, Tabs, TabsProps, Col } from "antd";
 // import Poster from "../../assets/images/poster.jpg";
-import CardMin from "../../components/Card/CardFilm_Min";
+import Recommend from "../../components/Recommend";
 
 const FilmHot = [
   {
@@ -83,39 +83,7 @@ const FilmHot = [
     title: "Hello Kity",
   },
 ];
-const Film_ComingSoon = [
-  {
-    poster: "",
-    title: "Xinchaoban",
-    view: 100,
-  },
-  {
-    poster: "",
-    title: "Xinchaoban",
-    view: 100,
-  },
-  {
-    poster: "",
-    title: "Xinchaoban",
-    view: 100,
-  },
-  {
-    poster: "",
-    title: "Xinchaoban",
-    view: 100,
-  },
 
-  {
-    poster: "",
-    title: "Xinchaoban",
-    view: 100,
-  },
-  {
-    poster: "",
-    title: "Xinchaoban",
-    view: 100,
-  },
-];
 const items: TabsProps["items"] = [
   {
     key: "1",
@@ -231,44 +199,7 @@ const Home = () => {
           </Col>
 
           <Col span={6}>
-            <div>
-              <h3
-                style={{
-                  marginBottom: "32px",
-                  borderBottom: "1px dotted #f2f2f2 ",
-                  paddingBottom: "10px",
-                }}
-              >
-                Trending
-              </h3>
-              {Film_ComingSoon.map((item, index) => (
-                <CardMin
-                  key={index}
-                  poster={item.poster}
-                  view={item.view}
-                  title={item.title}
-                />
-              ))}
-            </div>
-            <div>
-              <h3
-                style={{
-                  marginBottom: "32px",
-                  borderBottom: "1px dotted #f2f2f2 ",
-                  paddingBottom: "10px",
-                }}
-              >
-                Sắp chiếu
-              </h3>
-              {Film_ComingSoon.map((item, index) => (
-                <CardMin
-                  key={index}
-                  poster={item.poster}
-                  view={item.view}
-                  title={item.title}
-                />
-              ))}
-            </div>
+            <Recommend />
           </Col>
         </Row>
       </div>

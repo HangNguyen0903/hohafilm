@@ -4,16 +4,57 @@ import { AutoComplete, Col, Input, Row, Select, Typography } from "antd";
 import "../../../../index.css";
 import { useState } from "react";
 import Login from "../../../Modal/Login";
+interface MenuItem {
+  title: string;
+  link: string;
+  submenus?: MenuItem[];
+}
 
-const menu = [
-  { id: 1, name: "Trang chủ" },
-  { id: 2, name: "Thể loại" },
-  { id: 3, name: "Quốc gia" },
-  { id: 4, name: "Phim mới" },
-  { id: 5, name: "Phim bộ" },
-  { id: 6, name: "Phim lẻ" },
-  { id: 7, name: "Phim thuyết minh" },
+const menuItems: MenuItem[] = [
+  {
+    title: "Trang chủ",
+    link: "#home",
+  },
+  {
+    title: "Thể loại",
+    link: "#about",
+  },
+  {
+    title: "Quốc gia",
+    link: "#services",
+    submenus: [
+      {
+        title: "Service 1",
+        link: "#service1",
+      },
+      {
+        title: "Service 2",
+        link: "#service2",
+      },
+      {
+        title: "Service 3",
+        link: "#service3",
+      },
+    ],
+  },
+  {
+    title: "Phim mới",
+    link: "#phimmoi",
+  },
+  {
+    title: "Phim bộ",
+    link: "#phimbo",
+  },
+  {
+    title: "Phim lẻ",
+    link: "#phimle",
+  },
+  {
+    title: "Phim thuyết minh",
+    link: "#thuyetminh",
+  },
 ];
+
 const Header = () => {
   const [openLogin, setOpenLogin] = useState(false);
   const [openSignUp, setOpenSignUp] = useState(false);
@@ -68,14 +109,27 @@ const Header = () => {
         </Col>
       </Row>
       <Row>
-        {menu.map((item, index) => (
-          <Typography
-            key={index}
-            style={{ color: "#fff", marginRight: "30px" }}
-          >
-            {item.name}
-          </Typography>
-        ))}
+        <nav className="menu">
+          <ul className="menu-list">
+            {menuItems.map((menuItem) => (
+              <li
+                key={menuItem.title}
+                className={menuItem.submenus ? "has-submenu" : ""}
+              >
+                <a href={menuItem.link}>{menuItem.title}</a>
+                {menuItem.submenus && (
+                  <ul className="submenu">
+                    {menuItem.submenus.map((submenu) => (
+                      <li key={submenu.title}>
+                        <a href={submenu.link}>{submenu.title}</a>
+                      </li>
+                    ))}
+                  </ul>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
       </Row>
       {openLogin && <Login openModal={openLogin} setOpenModel={setOpenLogin} />}
       {openSignUp && (

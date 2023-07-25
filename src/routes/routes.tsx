@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Home from "../pages/Home";
 import Category from "../pages/Category";
 import { DefaultLayout } from "../components/layout";
+import Film from "../pages/Detail/Film";
 
 export const router = createBrowserRouter([
   {
@@ -17,7 +18,19 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <Category />,
+        element: (
+          <DefaultLayout>
+            <Category />
+          </DefaultLayout>
+        ),
+      },
+      {
+        path: "slug",
+        element: (
+          <DefaultLayout>
+            <Film />
+          </DefaultLayout>
+        ),
       },
     ],
   },
