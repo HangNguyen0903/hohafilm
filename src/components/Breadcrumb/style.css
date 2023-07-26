@@ -1,0 +1,20 @@
+.ant-breadcrumb {
+  color: #f0f2f5; /* Custom background color */
+  padding: 8px 0px; /* Custom padding */
+  border-radius: 4px; /* Custom border radius */
+}
+.ant-breadcrumb-link {
+  color: #f2f2f2; /* Custom link color */
+  text-decoration: none; /* Remove underline from links */
+}
+.ant-breadcrumb-link a {
+  color: #f2f2f2; /* Custom link color */
+  text-decoration: none; /* Remove underline from links */
+}
+.ant-breadcrumb li:last-child .ant-breadcrumb-link {
+  color: #fff; /* Custom color for the last link */
+  font-weight: bold; /* Custom font weight for the last link */
+}
+.ant-breadcrumb-separator {
+  color: #fff !important; /* Custom color for the separator (/) */
+}

@@ -1,0 +1,27 @@
+.ant-pagination {
+  display: flex; /* Custom display style, e.g., flex, block, inline-flex, etc. */
+  justify-content: center; /* Custom horizontal alignment, e.g., center, flex-start, flex-end, etc. */
+  margin-top: 20px; /* Custom top margin */
+}
+
+/* Custom styles for the individual page item in the Pagination */
+.ant-pagination-item {
+}
+.ant-pagination .ant-pagination-item {
+  background: rgb(174, 175, 175);
+}
+
+/* Custom styles for the active page item in the Pagination */
+.ant-pagination .ant-pagination-item-active {
+  background: #fff;
+}
+
+/* Custom styles for the disabled page item in the Pagination */
+.ant-pagination-item-disabled {
+  /* Add your custom styles for the disabled page item here */
+}
+
+/* Custom styles for the page jump input */
+.ant-pagination-options-quick-jumper input {
+  /* Add your custom styles for the page jump input here */
+}

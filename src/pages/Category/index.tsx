@@ -1,8 +1,10 @@
-import { Col, Pagination, Row, Select } from "antd";
+import { Col, Row } from "antd";
 import "./cate.css";
 import CardFilm from "../../components/Card/CardFilm";
 import Recommend from "../../components/Recommend";
 import BreadcrumbCustom from "../../components/Breadcrumb";
+import SelectCustom from "../../components/Select";
+import PaginationCustom from "../../components/Pagination";
 const FilmHot = [
   {
     count: 10,
@@ -82,25 +84,29 @@ const Category = () => {
   return (
     <div className="category">
       <BreadcrumbCustom />
-      <Row gutter={20} className="filter">
-        <Col>
-          <Select placeholder="Sắp xếp" />
-        </Col>
-        <Col>
-          <Select placeholder="The loai" />
-        </Col>
-        <Col>
-          <Select placeholder="Quốc gia" />
-        </Col>
-        <Col>
-          <Select placeholder="Năm" />
-        </Col>
-      </Row>
-      <Row>
+
+      <Row
+        style={{ margin: "20px 0px", background: "#191919", padding: "20px 0" }}
+        gutter={20}
+      >
         <Col span={18}>
-          <Row gutter={[20, 16]}>
+          <Row gutter={10} className="filter">
+            <Col>
+              <SelectCustom />
+            </Col>
+            <Col>
+              <SelectCustom />
+            </Col>
+            <Col>
+              <SelectCustom />
+            </Col>
+            <Col>
+              <SelectCustom />
+            </Col>
+          </Row>
+          <Row style={{ marginTop: "20px" }} gutter={[10, 16]}>
             {FilmHot.map((item, index) => (
-              <Col span={5}>
+              <Col span={6} style={{ paddingRight: "20px" }}>
                 <CardFilm
                   key={index}
                   count={item.count}
@@ -111,14 +117,8 @@ const Category = () => {
               </Col>
             ))}
           </Row>
-          <div
-            style={{
-              marginTop: "30px",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <Pagination defaultCurrent={1} total={50} />;
+          <div className="pagination">
+            <PaginationCustom />
           </div>
         </Col>
         <Col span={6}>

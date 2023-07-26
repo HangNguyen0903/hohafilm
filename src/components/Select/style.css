@@ -1,0 +1,39 @@
+.ant-select {
+  width: 180px; /* Custom width */
+  border-radius: 10px; /* Custom border radius */
+  color: #ff0000;
+}
+.ant-select-selector {
+  background: #000 !important;
+}
+
+/* Custom styles for the Select dropdown menu */
+.ant-select-dropdown {
+  border-radius: 8px; /* Custom border radius for the dropdown */
+}
+
+/* Custom styles for the Select options */
+.ant-select-dropdown-menu-item {
+  /* Add your custom styles for each option here */
+}
+
+/* Custom styles for the selected option in the dropdown menu */
+.ant-select-dropdown-menu-item-active {
+  /* Add your custom styles for the selected option here */
+}
+
+/* Custom styles for the arrow icon on the right side of the Select */
+.ant-select-arrow {
+  color: #ffffff; /* Custom color for the arrow icon */
+}
+
+/* Custom styles for the clear icon in the Select (when a value is selected) */
+.ant-select-clear-icon {
+  color: #ffffff; /* Custom color for the clear icon */
+}
+.ant-select-selection-item {
+  color: #00ff00; /* Custom text color for the selected option */
+}
+.ant-select-selection-placeholder {
+  color: #ff0000; /* Custom color for the placeholder text */
+}

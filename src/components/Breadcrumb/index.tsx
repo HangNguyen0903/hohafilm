@@ -1,10 +1,11 @@
 import { Breadcrumb } from "antd";
+import "./style.css";
 const BreadcrumbCustom = () => {
   return (
     <Breadcrumb
       items={[
         {
-          title: "Home",
+          title: <a href="">Home</a>,
         },
         {
           title: <a href="">Application Center</a>,
