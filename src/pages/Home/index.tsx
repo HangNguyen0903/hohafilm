@@ -8,6 +8,9 @@ import "swiper/css/pagination";
 import { Row, Tabs, TabsProps, Col } from "antd";
 // import Poster from "../../assets/images/poster.jpg";
 import Recommend from "../../components/Recommend";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { selectToken } from "../../context/auth/slice";
+import { rootState, store } from "../../context/store";
 
 const FilmHot = [
   {
@@ -118,12 +121,16 @@ const items: TabsProps["items"] = [
   },
 ];
 const Home = () => {
+  const token = selectToken()
+
+  const dispatch = useAppDispatch()
+  console.log('token: ', token)
   const onChange = (key: string) => {
     console.log(key);
   };
   return (
     <div className="home-page">
-      <h2>Phim hot</h2>
+      <h2 style={{ marginBottom: '20px' }}>Phim hot</h2>
       <div>
         <Row>
           <Swiper
