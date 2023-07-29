@@ -11,6 +11,14 @@ import Recommend from "../../components/Recommend";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { selectToken } from "../../context/auth/slice";
 import { rootState, store } from "../../context/store";
+import {
+  useQuery,
+  useMutation,
+  useQueryClient,
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
+import * as apiAuth from "../../context/auth/api";
 
 const FilmHot = [
   {
@@ -120,11 +128,28 @@ const items: TabsProps["items"] = [
     children: `Content of Tab Pane 3`,
   },
 ];
-const Home = () => {
-  const token = selectToken()
 
-  const dispatch = useAppDispatch()
-  console.log('token: ', token)
+const register = {
+  "username": "Hang xinh",
+  "email": "hangxinh@gmail.com",
+  "name": "Hang",
+  "password": "123456789",
+  "phone_number": "0989654321",
+  "birth": "1999-03-09",
+  "sex": "FEMALE",
+  "profile": ""
+
+}
+const Home = () => {
+  const { data } = useQuery({
+    queryKey: ['test'],
+    queryFn: () => apiAuth.register(register),
+    select: (data) => data.toString(),
+  })
+  // const token = selectToken()
+
+  // const dispatch = useAppDispatch()
+  // console.log('token: ', token)
   const onChange = (key: string) => {
     console.log(key);
   };

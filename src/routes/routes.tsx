@@ -3,6 +3,8 @@ import Home from "../pages/Home";
 import Category from "../pages/Category";
 import { DefaultLayout } from "../components/layout";
 import Film from "../pages/Detail/Film";
+import Login from "../components/Login";
+import SignUp from "../components/SignUp";
 
 export const router = createBrowserRouter([
   {
@@ -32,6 +34,19 @@ export const router = createBrowserRouter([
           </DefaultLayout>
         ),
       },
+
     ],
   },
+  {
+    path: 'login',
+    element: (
+      <Login />
+    ),
+  },
+  {
+    path: 'sign-up',
+    element: (
+      <SignUp />
+    ),
+  }
 ]);

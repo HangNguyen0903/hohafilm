@@ -1,0 +1,55 @@
+* {
+    /* text-align: center; */
+}
+
+.login {
+    padding: 30px 400px;
+}
+
+.logo {
+    margin: 40px 0px;
+    text-align: center;
+}
+
+/* custom-form.css */
+/* Custom styles for the main form container */
+.ant-form {}
+
+/* Custom styles for the form item label */
+.ant-form-item-label {
+    /* Add your custom styles for the form item label here */
+}
+
+/* Custom styles for the form item control */
+.ant-form-item-control {
+    /* Add your custom styles for the form item control here */
+}
+
+/* Custom styles for the input field */
+.ant-input {
+    /* Add your custom styles for the input field here */
+}
+
+/* Custom styles for the select field */
+.ant-select-selector {
+    /* Add your custom styles for the select field here */
+}
+
+/* Custom styles for the checkbox field */
+.ant-checkbox-wrapper {
+    /* Add your custom styles for the checkbox field here */
+}
+
+/* Custom styles for the radio button field */
+.ant-radio-wrapper {
+    /* Add your custom styles for the radio button field here */
+}
+
+/* Custom styles for the button field */
+.ant-btn {
+    /* Add your custom styles for the button field here */
+}
+
+hr {
+    margin: 20px 0;
+}
