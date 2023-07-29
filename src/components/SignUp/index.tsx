@@ -79,11 +79,11 @@ const SignUp = () => {
                 </Form.Item>
 
 
-                <Form.Item >
+                {/* <Form.Item >
                     <Button type="primary" htmlType="submit" style={{ width: '100%' }}>
                         Sign Up
                     </Button>
-                </Form.Item>
+                </Form.Item> */}
             </Form>
         </div>)
 }
