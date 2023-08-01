@@ -7,8 +7,12 @@ import { router } from "./routes/routes";
 import { Provider } from "react-redux";
 import { store } from './context/store'
 import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+import axios from "axios"
+import setupAxios from "./libs/axios";
 
-const queryClient = new QueryClient()
+const queryCldfhgfgyient = new QueryClient()
+
+// setupAxios(axios)
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

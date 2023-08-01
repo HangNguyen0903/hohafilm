@@ -19,4 +19,13 @@ export default defineConfig({
       },
     },
   },
+  server: {
+    cors: false,
+    proxy: {
+      '/film-types': {
+        target: "http://192.168.0.103:8080",
+        changeOrigin: true
+      }
+    }
+  }
 });

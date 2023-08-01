@@ -3,6 +3,7 @@ import Cookies from 'js-cookie'
 
 export const getCookie = (key: string) => {
     const _cookie = Cookies.get(COOKIE_KEY)
+    console.log('_cookie', _cookie)
     if (_cookie) {
         const _cookieObj = JSON.parse(_cookie)
         return _cookieObj[key]

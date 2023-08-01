@@ -1,35 +1,19 @@
-import { Button, Checkbox, Form, Input } from "antd"
+import { Button, Form, Input } from "antd"
 import logo from "../../assets/images/logo.png";
 import './style.css'
 import { useMutation } from "@tanstack/react-query";
+import { register } from "../../context/auth/api";
+import { IPayloadLogin } from "../../interfaces/auth";
 const SignUp = () => {
 
     const { mutate } = useMutation({
-        // mutationFn: (values: NotificationForm) => {
+        mutationFn: register,
 
-        //     return NotificationsAPI.createNotification({
-        //         name: values?.name,
-        //         type: values?.type,
-        //         address: values?.address,
-        //         period: values?.period,
-        //     });
-        // },
-        // onMutate: () => setIsLoading(true),
-        // onSuccess: () => {
-        //     toast.success(
-        //         data.key
-        //             ? t<string>('monitoring.notification.updateNotificationSuccess')
-        //             : t<string>('monitoring.notification.createNotificationSuccess')
-        //     );
-        //     closeModal();
-        //     data?.handleRefresh?.();
-        // },
-        // onSettled: () => setIsLoading(false),
     });
 
-    const onFinish = (values: any) => {
-        mutate(values);
-
+    const onFinish = (values: unknown) => {
+        console.log('values: ', values)
+        mutate(values as IPayloadLogin);
     }
     return (
         <div className="sign-up">
@@ -77,13 +61,11 @@ const SignUp = () => {
                 >
                     <Input />
                 </Form.Item>
-
-
-                {/* <Form.Item >
+                <Form.Item >
                     <Button type="primary" htmlType="submit" style={{ width: '100%' }}>
                         Sign Up
                     </Button>
-                </Form.Item> */}
+                </Form.Item>
             </Form>
         </div>)
 }
