@@ -1,9 +1,12 @@
-import axios from 'axios';
-// Đặt cấu hình mặc định lúc tạo ra instance
-const instance = axios.create({
-  baseURL: 'http://192.168.1.100:8080/'
+import axios, { AxiosRequestConfig } from "axios";
+
+const request = axios.create({
+  baseURL: import.meta.env.VITE_SOME_KEY || "",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+    Authorization: "Bearer ",
+  },
 });
 
-// Sửa đổi cấu hình trị mặc định sau khi tạo ra instance
-
-// instance.defaults.headers.common['Authorization'] = AUTH_TOKEN;
+export default request;
